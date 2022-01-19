@@ -27,7 +27,7 @@ public class GameWithNumbers {
         subList = (ArrayList<Integer>) arrayList.clone();
 
         for (int i = 0; i < arrayList.size() - 2; i++) {
-            if (arrayList.get(i) == arrayList.get(i + 1)) {
+            if (arrayList.get(i).equals(arrayList.get(i + 1))) {
                 repeatNum++;
                 if ((i == arrayList.size()-3) & (repeatNum >= 2)){
                     arrayList.set(arrayList.size() - 1, arrayList.get(arrayList.size() - 1) + repeatNum + 1);

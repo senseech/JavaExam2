@@ -17,7 +17,7 @@ public class HeroNMonsters {
         }
         in.close();
 
-        Collections.sort(lvlMonsters);
+        lvlMonsters.sort(Integer::compare);
 
         for (int i =0; i < numOfMonsters; i++){
             if (lvlHero >= lvlMonsters.get(i)){

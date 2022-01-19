@@ -18,15 +18,11 @@ public class MapTracker {
     }
 
     boolean crossOfTowers(int firstTower, int secondTower,MapTracker mapTracker){
-        boolean check = false;
-        if  ((abs(mapTracker.arrOfTowers.get(firstTower).X - mapTracker.arrOfTowers.get(secondTower).X) <=
-                 (mapTracker.arrOfTowers.get(firstTower).R + mapTracker.arrOfTowers.get(secondTower).R + 1)) &
-             (abs(mapTracker.arrOfTowers.get(firstTower).Y - mapTracker.arrOfTowers.get(secondTower).Y) <=
-                 (mapTracker.arrOfTowers.get(firstTower).R + mapTracker.arrOfTowers.get(secondTower).R + 1)) &
-                 (firstTower != secondTower)){
-            check = true;
-        }
-        return check;
+        return (abs(mapTracker.arrOfTowers.get(firstTower).X - mapTracker.arrOfTowers.get(secondTower).X) <=
+                (mapTracker.arrOfTowers.get(firstTower).R + mapTracker.arrOfTowers.get(secondTower).R + 1)) &
+                (abs(mapTracker.arrOfTowers.get(firstTower).Y - mapTracker.arrOfTowers.get(secondTower).Y) <=
+                        (mapTracker.arrOfTowers.get(firstTower).R + mapTracker.arrOfTowers.get(secondTower).R + 1)) &
+                (firstTower != secondTower);
     }
 
     int crossOfPoint(int x, int y, MapTracker mapTracker){
@@ -42,7 +38,7 @@ public class MapTracker {
 
     void CheckingPath(MapTracker mapTracker){
         for (int i = 0; i < mapTracker.arrOfTowers.size(); i++){
-            ArrayList arrayList = new ArrayList<>();
+            ArrayList<Integer> arrayList = new ArrayList<>();
             for (int j = 0; j < mapTracker.arrOfTowers.size(); j++){
                 if (mapTracker.crossOfTowers(i, j,mapTracker) & (i != j)){
                     arrayList.add(j,j);
@@ -61,7 +57,6 @@ public class MapTracker {
         for (int i = 0; i < mapTracker.pathOfTowers.get(mapTracker.walkingWay.get(mapTracker.walkingWay.size() -1)).size(); i++) {
             if (mapTracker.pathOfTowers.get(mapTracker.walkingWay.get(mapTracker.walkingWay.size() -1)).get(i) == mapTracker.finishTower){
                 return true;
-                //asd
             }
             else if (mapTracker.pathOfTowers.get(mapTracker.pathOfTowers.get(mapTracker.walkingWay.get(mapTracker.walkingWay.size() -1)).get(i)).size() == 0) {
                 return false;
@@ -99,8 +94,6 @@ public class MapTracker {
         else {
             mapTracker.walkingWay.add(mapTracker.startTower);
             System.out.println(mapTracker.SearchWay(mapTracker));
-
-
         }
     }
 
