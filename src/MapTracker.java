@@ -61,6 +61,7 @@ public class MapTracker {
         for (int i = 0; i < mapTracker.pathOfTowers.get(mapTracker.walkingWay.get(mapTracker.walkingWay.size() -1)).size(); i++) {
             if (mapTracker.pathOfTowers.get(mapTracker.walkingWay.get(mapTracker.walkingWay.size() -1)).get(i) == mapTracker.finishTower){
                 return true;
+                //asd
             }
             else if (mapTracker.pathOfTowers.get(mapTracker.pathOfTowers.get(mapTracker.walkingWay.get(mapTracker.walkingWay.size() -1)).get(i)).size() == 0) {
                 return false;
